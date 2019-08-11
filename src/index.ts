@@ -1,7 +1,7 @@
 import { watch } from "fs";
 import { app, debounceTime, logFileName } from "./App";
 
-function main() {
+export default function main() {
   console.log(`Started watching file ${logFileName}`);
 
   // Setup the debounce
@@ -23,5 +23,3 @@ function main() {
 function test() {
   app.searchLogFile(logFileName);
 }
-
-main();
