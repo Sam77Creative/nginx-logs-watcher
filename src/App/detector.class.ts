@@ -34,7 +34,11 @@ export class Detector {
       // If the log occured within the last two seconds
       if (log.timeSinceLast <= 2 * 1000) {
         // Is the ip in the current ip pool
-        if (ipPool.includes(log.ip)) {
+        if (
+          ipPool.includes(log.ip) ||
+          log.status === 404 ||
+          log.status === 401
+        ) {
           // Increment detection vars
           if (log.status === 404) {
             num404s += 1;
