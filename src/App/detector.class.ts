@@ -52,6 +52,10 @@ export class Detector {
           if (computeSuspicion() >= detectorSensitivity) {
             const problem = this.createProblemObj(log, index);
             problems.push(problem);
+
+            // Reset detection vars
+            susIter = 0;
+            num404s = 0;
           }
         } else {
           // Hold onto last 5 ips
