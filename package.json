@@ -1,0 +1,23 @@
+{
+  "name": "@77io/logs-watcher",
+  "version": "0.0.1",
+  "description": "Watches nginx access logs for suspicious activity",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config lib/index.js",
+    "build": "tsc",
+    "build-start": "npm run build && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.7.1",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@slack/web-api": "^5.1.0",
+    "dotenv": "^8.0.0"
+  }
+}

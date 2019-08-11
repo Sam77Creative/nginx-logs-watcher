@@ -1,0 +1,12 @@
+import { App } from "./app.class";
+export declare const logFileName: string;
+export declare let debounceString: string | undefined;
+export declare let debounceTime: number;
+export declare const slackToken: string;
+export declare const slackChannel: string;
+export declare const serverName: string;
+export declare let detectorSensitivity: number;
+export { Converter } from "./converter.class";
+export { Detector } from "./detector.class";
+export { Notifier } from "./notifier.class";
+export declare const app: App;
