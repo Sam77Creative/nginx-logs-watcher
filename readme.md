@@ -60,3 +60,18 @@ DETECTOR_SENSITIVITY=20
 ```
 
 ## Running with systemd
+
+Here is an example service file that will restart the log watcher on failure. It also sets up the environment variables. This example assumes a typically installation of NodeJS and nginx-logs-watcher installed globally.
+
+```service
+[Unit]
+Description=NginxLogsWatcher
+
+[Service]
+ExecStart=/usr/bin/node /var/proxyApi/lib
+Restart=on-failure
+Environment=NODE_DEBUG=false LOG_FILE=/var/log/nginx/access.log DEBOUNCE_SECONDS=100 SLACK_TOKEN=xoxb-YOUR-TOKEN-HERE SLACK_CHANNEL=SLACKCHANNELID SERVER_NAME=DevelopmentServer DETECTOR_SENSITIVITY=20
+
+[Install]
+WantedBy=multi-user.target
+```
