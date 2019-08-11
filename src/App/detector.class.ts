@@ -31,6 +31,9 @@ export class Detector {
     };
 
     logs.forEach((log: AccessLog, index: number) => {
+      if (debug) {
+        console.log(`SusIter ${susIter}, num404s: ${num404s}`);
+      }
       // If the log occured within the last two seconds
       if (log.timeSinceLast <= 2 * 1000) {
         // Is the ip in the current ip pool
