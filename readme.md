@@ -68,7 +68,7 @@ Here is an example service file that will restart the log watcher on failure. It
 Description=NginxLogsWatcher
 
 [Service]
-ExecStart=/usr/bin/node /var/proxyApi/lib
+ExecStart=/usr/bin/node /opt/nodejs/lib/node_modules/@77io/nginx-logs-watcher/bin/index.js
 Restart=on-failure
 Environment=NODE_DEBUG=false LOG_FILE=/var/log/nginx/access.log DEBOUNCE_SECONDS=100 SLACK_TOKEN=xoxb-YOUR-TOKEN-HERE SLACK_CHANNEL=SLACKCHANNELID SERVER_NAME=DevelopmentServer DETECTOR_SENSITIVITY=20
 
